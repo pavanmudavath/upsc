@@ -326,3 +326,47 @@
 .dropdown3:hover .dropdown-content3 {
     display: block;
 }
+
+
+
+/* images */
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slider images */
+.slider-images {
+    display: flex;
+   width: 200%;
+}
+
+.slider-image {
+    flex: 0 0 50%;
+    object-fit: cover;
+}
+
+/* Slider dots */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: black;
+}
