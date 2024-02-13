@@ -450,7 +450,36 @@ z-index: 2;
 }
 
 
-.navbar-textrun{
+
+.navbar-textrun {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    overflow: hidden; /* Clip overflowing content */
+  }
+  
+  .scroll-control {
+    color: white;
+    white-space: nowrap; /* Prevent text wrapping */
+    position: absolute; /* Position relative to .navbar-textrun */
+    animation: scroll-Right-Left 30s linear infinite; /* Animation properties */
+  }
+  
+  @keyframes scroll-Right-Left {
+    0% {
+      transform: translateX(100%); /* Start at right edge of .navbar-textrun */
+    }
+    100% {
+      transform: translateX(-100%); /* Move beyond left edge of .navbar-textrun */
+    }
+  }
+  
+
+/* 
+.navbar-textrun {
     position: relative;
     display: flex;
     align-items: center;
@@ -460,34 +489,40 @@ z-index: 2;
     margin-top: 1px;
     overflow: hidden;
 }
-.scroll-control{
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%; 
-    height: 50px;
-    flex-grow: 1;
-    background-color:blue;
+
+.scroll-control {
+    position: absolute;
+    left: calc(100px + 10px); 
+    top: 0;
+    bottom: 0;
     overflow: hidden;
-}
-
-.alert-image{
-    margin-left: 200px;
-}
-.view-all{
-   margin-left: 800px;
-}
-.right-left-scroll{
-    color: #ffffff;
     white-space: nowrap;
-    animation:scroll-Right-Left 30s linear infinite;
 }
 
-@keyframes scroll-Right-Left{
-    0%{
+.right-left-scroll {
+    display: inline-block; 
+    animation: scroll-Right-Left 30s linear infinite;
+}
+
+.alert-image {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.view-all {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes scroll-Right-Left {
+    0% {
         transform: translateX(100%);
     }
-    100%{
+    100% {
         transform: translateX(-100%);
     }
-}
+} */
