@@ -15,10 +15,11 @@ const goPrev=()=>{
 }
 
 const goNext=()=>{
-    if(counter<slides.length-1){
     counter++;
-    slideImage();
+    if(counter>=slides.length){
+    counter=0;
 }
+    slideImage();
 }
 
 const slideImage =()=>{
@@ -31,3 +32,16 @@ const slideImage =()=>{
         }
     )
 }
+
+const showSlider=(index)=>{
+    if(index>=0 && index<slides.length){
+        counter=index;
+        slideImage();
+    }
+}
+
+const startSlideShow=()=>{
+    intervalId=setInterval(goNext,3000);
+}
+
+startSlideShow();
